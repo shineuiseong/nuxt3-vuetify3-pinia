@@ -21,8 +21,7 @@ module.exports = {
     'plugin:nuxt/recommended', // Nuxt.js 관련 규칙
     'plugin:vue/recommended', // Vue.js 관련 규칙
     'plugin:prettier/recommended', // Prettier와 ESLint의 충돌을 방지하기 위한 규칙
-    'plugin:@typescript-eslint/eslint-recommended', // TypeScript ESLint 규칙
-    '@nuxtjs/eslint-config-typescript' // Nuxt.js 프로젝트에서 TypeScript와 함께 사용되는 ESLint 규칙
+    'plugin:@typescript-eslint/eslint-recommended' // TypeScript ESLint 규칙
   ],
   rules: {
     // 사용자 정의 규칙 설정
