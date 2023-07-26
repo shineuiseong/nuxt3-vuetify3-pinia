@@ -1,9 +1,13 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import vuetify from 'vite-plugin-vuetify'
+import svgLoader from 'vite-svg-loader'
+import dotenv from 'dotenv'
+
+const envPath = `env/.env.${process.env.NODE_ENV}`
+dotenv.config({ path: envPath })
 
 export default defineNuxtConfig({
-  ssr: true,
-  devtools: { enabled: false },
+  ssr: false,
+  devtools: { enabled: true },
   pages: true,
   app: {
     head: {
@@ -22,10 +26,7 @@ export default defineNuxtConfig({
       script: []
     }
   },
-  css: [
-    '@mdi/font/css/materialdesignicons.min.css',
-    'vuetify/lib/styles/main.sass'
-  ],
+  css: [],
   components: [
     {
       path: '~/components',
@@ -33,6 +34,7 @@ export default defineNuxtConfig({
     }
   ],
   modules: [
+    '@pinia/nuxt',
     async (options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) =>
         // @ts-ignore
@@ -50,7 +52,11 @@ export default defineNuxtConfig({
   vite: {
     define: {
       'process.env.DEBUG': false
-    }
+    },
+    plugins: [svgLoader()]
+  },
+  vue: {
+    runtimeCompiler: true
   },
   build: { transpile: ['vuetify'] },
   sourcemap: {
