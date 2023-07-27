@@ -1,13 +1,19 @@
 import vuetify from 'vite-plugin-vuetify'
 import svgLoader from 'vite-svg-loader'
 import dotenv from 'dotenv'
+import { dirname, resolve } from 'path'
+import { fileURLToPath } from 'url'
+import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
 
 const envPath = `env/.env.${process.env.NODE_ENV}`
 dotenv.config({ path: envPath })
 
 export default defineNuxtConfig({
+  experimental: {
+    watcher: 'chokidar'
+  },
   ssr: false,
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   pages: true,
   app: {
     head: {
@@ -34,13 +40,14 @@ export default defineNuxtConfig({
     }
   ],
   modules: [
+    '@nuxt/devtools',
     '@pinia/nuxt',
     async (options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) =>
         // @ts-ignore
         config.plugins.push(
           vuetify({
-            autoImport: true,
+            autoImport: false,
             styles: {
               configFile: 'assets/scss/settings.scss'
             }
@@ -53,7 +60,14 @@ export default defineNuxtConfig({
     define: {
       'process.env.DEBUG': false
     },
-    plugins: [svgLoader()]
+    plugins: [
+      VueI18nVitePlugin({
+        include: [
+          resolve(dirname(fileURLToPath(import.meta.url)), './locales/**')
+        ]
+      }),
+      svgLoader()
+    ]
   },
   vue: {
     runtimeCompiler: true
