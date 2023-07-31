@@ -52,5 +52,9 @@ module.exports = {
       }
     ],
     'global-require': 0 // require로 이미지 경로를 지정할 때 발생하는 에러 무시
+  },
+  globals: {
+    ref: false,
+    toRef: false
   }
 }
