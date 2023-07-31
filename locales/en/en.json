@@ -1,4 +1,12 @@
 {
-  "key": "en",
-  "album": "album"
+  "code": "en",
+  "email": "Email",
+  "messages": {
+      "email": "The value of {field} items must be a valid email format.",
+      "required": "{field} items are required input information",
+      "required_select": "{field} items are required.",
+      "limit": "{field} items cannot exceed 5-20 characters",
+      "confirmed": "Passwords do not match.",
+      "password": "Please enter a password of 10 or 20 digits with a combination of English, numbers, and special characters."
+    }
 }

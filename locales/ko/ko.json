@@ -1,4 +1,12 @@
 {
-  "key": "ko",
-  "album": "앨범"
+  "code": "ko",
+  "email": "이메일",
+  "messages": {
+    "email": "{field} 항목의 값은 유효한 이메일 형식이어야 합니다",
+    "required": "{field} 항목은 필수 입력 정보입니다",
+    "required_select": "{field} 항목은 필수 선택 사항입니다.",
+    "limit": "{field} 항목은 5 ~ 20 자를 초과 할 수 없습니다",
+    "confirmed": "비밀번호가 일치하지 않습니다.",
+    "password": "영문, 숫자, 특수문자를 조합한 10자리 이상 20자리 이하 비밀번호를 입력해 주세요. "
+}
 }
