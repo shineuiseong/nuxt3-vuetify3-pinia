@@ -10,8 +10,13 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
+    "@vee-validate/i18n": "^4.11.0",
+    "@vee-validate/nuxt": "^4.10.8",
+    "@vee-validate/rules": "^4.11.0",
     "nuxt": "^3.6.5",
     "pinia": "^2.1.4",
+    "swiper": "9.4.1",
+    "vee-validate": "^4.11.0",
     "vue-i18n": "^9.2.2",
     "vuetify": "^3.3.8"
   },

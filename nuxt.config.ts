@@ -42,12 +42,12 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/devtools',
     '@pinia/nuxt',
+    '@vee-validate/nuxt',
     async (options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) =>
         // @ts-ignore
         config.plugins.push(
           vuetify({
-            autoImport: false,
             styles: {
               configFile: 'assets/scss/settings.scss'
             }
@@ -56,6 +56,17 @@ export default defineNuxtConfig({
       )
     }
   ],
+  veeValidate: {
+    // disable or enable auto imports
+    autoImports: true,
+    // Use different names for components
+    componentNames: {
+      Form: 'VeeForm',
+      Field: 'VeeField',
+      FieldArray: 'VeeFieldArray',
+      ErrorMessage: 'VeeErrorMessage'
+    }
+  },
   vite: {
     define: {
       'process.env.DEBUG': false
