@@ -34,9 +34,10 @@ export default defineNuxtConfig({
   },
   css: [],
   components: [
+    '~/components',
     {
-      path: '~/components',
-      pathPrefix: false
+      path: '~/components/test/',
+      prefix: 'test'
     }
   ],
   modules: [
