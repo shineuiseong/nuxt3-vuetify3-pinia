@@ -9,6 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/device": "^3.1.0",
     "@pinia/nuxt": "^0.4.11",
     "@vee-validate/i18n": "^4.11.0",
     "@vee-validate/nuxt": "^4.10.8",
