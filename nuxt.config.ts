@@ -42,6 +42,7 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxt/devtools',
+    '@nuxtjs/device',
     '@pinia/nuxt',
     '@vee-validate/nuxt',
     async (options, nuxt) => {
@@ -57,10 +58,14 @@ export default defineNuxtConfig({
       )
     }
   ],
+  imports: {
+    dirs: ['./stores']
+  },
+  pinia: {
+    autoImports: ['defineStore', 'acceptHMRUpdate']
+  },
   veeValidate: {
-    // disable or enable auto imports
     autoImports: true,
-    // Use different names for components
     componentNames: {
       Form: 'VeeForm',
       Field: 'VeeField',
