@@ -31,7 +31,8 @@
     "types": [
       "@nuxt/types",
       "@types/node",
-      "@pinia/nuxt"
+      "@pinia/nuxt",
+      "@nuxtjs/device"
     ], // 사용할 타입 정의 설정
     "exclude": [
       "node_modules"
