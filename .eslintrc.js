@@ -18,8 +18,9 @@ module.exports = {
   extends: [
     'airbnb-base', // airbnb에서 사용하는 JavaScript 스타일 가이드
     'eslint:recommended', // ESLint에서 권장하는 기본 규칙
+    'plugin:vue/vue3-recommended',
     'plugin:nuxt/recommended', // Nuxt.js 관련 규칙
-    'plugin:vue/recommended', // Vue.js 관련 규칙
+    '@indielayer/eslint-config-vue',
     'plugin:prettier/recommended', // Prettier와 ESLint의 충돌을 방지하기 위한 규칙
     'plugin:@typescript-eslint/eslint-recommended' // TypeScript ESLint 규칙
   ],
