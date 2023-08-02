@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url'
 import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
 
 const envPath = `env/.env.${process.env.NODE_ENV}`
+
 dotenv.config({ path: envPath })
 
 export default defineNuxtConfig({
@@ -46,8 +47,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vee-validate/nuxt',
     async (options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) =>
-        // @ts-ignore
+      nuxt.hooks.hook('vite:extendConfig', (config: any) =>
         config.plugins.push(
           vuetify({
             styles: {
