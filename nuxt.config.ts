@@ -41,6 +41,16 @@ export default defineNuxtConfig({
       prefix: 'test'
     }
   ],
+  nitro: {
+    baseURL: process.env.AXIOS_BASE_URL,
+    routeRules: {
+      '/api/**': {
+        proxy: {
+          to: `${process.env.API_DEV}/**`
+        }
+      }
+    }
+  },
   modules: [
     '@nuxt/devtools',
     '@nuxtjs/device',
